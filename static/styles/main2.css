@@ -1,0 +1,38 @@
+html {
+    justify-content: center;
+    align-items: center;
+}
+
+.hangman-text-mobile {
+    display: none;
+}
+
+.hangman {
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 2rem
+}
+
+.hangman-right {
+    left: 0;
+}
+
+@media only screen and (max-device-width: 750px) {
+    .hangman {
+        display: none;
+    }
+
+    .hangman-text-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10rem 2rem;
+        height: 100rem;
+
+    }
+
+    .hangman-text-mobile h1 {
+        font-size: 60px;
+        text-align: center;
+    }
+}
