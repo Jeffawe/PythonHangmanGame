@@ -19,6 +19,7 @@ msg = " "
 description = " "
 score = 0
 canContinue = 0
+canGuess = 0
 
 
 def score_control():
@@ -51,7 +52,7 @@ def beginning(html_list, form_html, category):
     global guessed_words
     global guessed
     global color
-    global msg, score, canContinue
+    global msg, score, canContinue, canGuess
 
     dword = get_word(html_list)
     word = dword.upper()
@@ -60,11 +61,12 @@ def beginning(html_list, form_html, category):
     color = 0
     tries = 6
     canContinue = 0
+    canGuess = 0
     guessed_letters = []
     guessed_words = []
     guessed = False
     return render_template("NoDescription.html", word=word_completion, msg=msg, color=0, form_html=form_html,
-                           category=category, score=score)
+                           category=category, score=score, canGuess=canGuess)
 
 
 def beginning_description(html_list, html_list_description, form_html, category):
@@ -75,7 +77,7 @@ def beginning_description(html_list, html_list_description, form_html, category)
     global guessed_words
     global guessed
     global color
-    global msg, description, score, canContinue
+    global msg, description, score, canContinue, canGuess
 
     dword = get_word(html_list)
     word = dword.upper()
@@ -85,11 +87,12 @@ def beginning_description(html_list, html_list_description, form_html, category)
     color = 0
     tries = 6
     canContinue = 0
+    canGuess = 0
     guessed_letters = []
     guessed_words = []
     guessed = False
     return render_template("Description.html", word=word_completion, msg=msg, color=0, description=description,
-                           form_html=form_html, category=category, score=score)
+                           form_html=form_html, category=category, score=score, canGuess=canGuess)
 
 
 def play(html_input, form_html, category):
@@ -100,7 +103,7 @@ def play(html_input, form_html, category):
     global guessed
     global guessed_letters
     global guessed_words
-    global tries, score, canContinue
+    global tries, score, canContinue, canGuess
 
     if not guessed and tries > 0:
         guess_input = request.form[html_input].upper()
@@ -155,15 +158,18 @@ def play(html_input, form_html, category):
             score = score_control()
             color = 0
             canContinue = 1
+            canGuess = 1
             guessed = True
 
         if tries == 0:
             msg = 'You ran out of tries. The answer was ' + str(word)
+            canGuess = 1
             color = 1
 
     elif guessed:
         msg = "You guessed it right. Congrats"
         score = score_control()
+        canGuess = 1
         color = 0
         canContinue = 1
 
@@ -171,10 +177,11 @@ def play(html_input, form_html, category):
         msg = 'You ran out of tries. The answer was ' + str(word)
         color = 1
         canContinue = 0
+        canGuess = 1
 
     tries_html = 'You have ' + str(tries) + ' tries left'
     return render_template("NoDescription.html", form_html=form_html, triesnumber=tries_html, tries=tries, msg=msg, color=color,
-                           word=word_completion, category=category, score=score, canContinue=canContinue)
+                           word=word_completion, category=category, score=score, canContinue=canContinue, canGuess=canGuess)
 
 
 def play_description(html_input, form_html, category):
@@ -185,7 +192,7 @@ def play_description(html_input, form_html, category):
     global guessed
     global guessed_letters
     global guessed_words
-    global tries, description, score, canContinue
+    global tries, description, score, canContinue, canGuess
 
     if not guessed and tries > 0:
         guess_input = request.form[html_input].upper()
@@ -241,25 +248,30 @@ def play_description(html_input, form_html, category):
             canContinue = 1
             color = 0
             guessed = True
+            canGuess = 1
 
         if tries == 0:
             msg = 'You ran out of tries. The answer was ' + str(word)
             color = 1
+            canGuess = 1
 
     elif guessed:
         msg = "You guessed it right. Congrats"
         score = score_control()
         canContinue = 1
         color = 0
+        canGuess = 1
 
     else:
         msg = 'You ran out of tries. The answer was ' + str(word)
         canContinue = 0
         color = 1
+        canGuess = 1
 
     tries_html = 'You have ' + str(tries) + ' tries left'
     return render_template("Description.html", triesnumber=tries_html, tries=tries, msg=msg, color=color, word=word_completion,
-                           form_html=form_html, description=description, category=category, score=score, canContinue=canContinue)
+                           form_html=form_html, description=description, category=category, score=score, canContinue=canContinue,
+                           canGuess=canGuess)
 
 
 @app.route('/')

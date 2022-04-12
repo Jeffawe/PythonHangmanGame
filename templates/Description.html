@@ -44,9 +44,11 @@
                     <input class="input is-primary has-text-centered hangman-input" style="width: 30%;" type="text"  placeholder="Enter text..." name="game_input">
                 </div>
 
+                {% if canGuess == 0 %}
                 <div class="field hangman-buttons">
                     <button class="button is-primary is-rounded" type="submit">Guess</button>
                 </div>
+                {% endif %}
             </form>
 
             <br>

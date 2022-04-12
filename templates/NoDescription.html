@@ -44,9 +44,11 @@
                     <input class="input is-primary has-text-centered hangman-input" type="text"  placeholder="Enter text..." name="game_input">
                 </div>
 
+                {% if canGuess == 0 %}
                 <div class="field hangman-buttons">
                     <button class="button is-primary is-rounded" type="submit">Guess</button>
                 </div>
+                {% endif %}
             </form>
 
             <br>
@@ -60,7 +62,7 @@
 
             <br>
 
-            {%if canContinue == 1%}
+            {% if canContinue == 1 %}
             <form action= {{form_html}} autocomplete="off">
                 <div class="field hangman-buttons">
                      <button class="button is-primary is-rounded" type="submit">Continue</button>
