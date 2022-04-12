@@ -3,6 +3,7 @@ games_list = [
     'Uncharted',
     'Fortnite',
     'Tetris',
+    'GTA',
 ]
 
 games_list_description = [
@@ -10,4 +11,5 @@ games_list_description = [
     'What Game has the Subtitle: Among Thieves ',
     'Celebration Dance, Battle Royale',
     'A Popular puzzle game created in 1984',
+    'Guns, Carjacking',
 ]
