@@ -45,17 +45,24 @@ html {
     }
 
     .hangman p {
-        font-size: 30px;
+        padding: 2rem 0rem;
+        font-size: 60px;
         text-align: center;
+        line-height: 1.6;
     }
 
     .hangman-text {
         font-size: 100px;
         text-align: center;
+        line-height: 1.6
     }
 
     .hangman-buttons div {
-        padding: 1rem 0rem;
+        padding: 3rem 0rem;
+    }
+
+    .hangman-buttons button {
+        font-size: 50px;
     }
 }
 
