@@ -7,6 +7,8 @@ from database.states import states_list
 from database.sports import sports_list
 from database.games import games_list, games_list_description
 
+import time
+
 app = Flask(__name__)
 word = " "
 word_completion = " "
@@ -272,7 +274,7 @@ def play_description(html_input, form_html, category):
 
     tries_html = 'You have ' + str(tries) + ' tries left'
     return render_template("Description.html", triesnumber=tries_html, tries=tries, msg=msg, color=color, word=word_completion,
-                           form_html=form_html, description=description, category=category, score=score, canContinue=canContinue,
+                           form_html=form_html + "?t=" + str(time.time()), description=description, category=category, score=score, canContinue=canContinue,
                            canGuess=canGuess)
 
 
