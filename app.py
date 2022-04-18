@@ -7,10 +7,15 @@ from database.shapes import shapes_list
 from database.states import states_list
 from database.sports import sports_list
 from database.games import games_list, games_list_description
+from flask_session import Session
+
 
 import time
 
 app = Flask(__name__)
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
 app.secret_key = 'BAD_SECRET_KEY'
 
 
