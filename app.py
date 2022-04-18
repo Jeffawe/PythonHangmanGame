@@ -187,6 +187,8 @@ def play(html_input, form_html, category):
 def play_description(html_input, form_html, category):
     global word, color, msg
 
+    print(word)
+
     global word_completion
     print(word_completion)
     global guessed
