@@ -9,5 +9,3 @@ B
 database/states.py,4\0\400f5eab038869c0d97bd5220ab725b1fa911c7e
 J
 static/styles/mainpage.css,1\6\164d3f6d92104a9a13ee5b6f70a4a3e719a1aa8d
-D
-templates/index.html,f\6\f69b8ce2e31684ae06f1b3e84821e07e3dfddb2f
