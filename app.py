@@ -14,7 +14,7 @@ import time
 
 app = Flask(__name__)
 app.config['secret_key'] = b'\x8c\xa1\xb2\xb1\x16\x0c1b\x0e\xfd|1\xef\x10\x92,~\x11>\xa8\xa5\x9c$\x05'
-app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_PERMANENT"] = True
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
