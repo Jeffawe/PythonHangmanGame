@@ -13,10 +13,11 @@ from flask_session import Session
 import time
 
 app = Flask(__name__)
+app.secret_key = b'\x8c\xa1\xb2\xb1\x16\x0c1b\x0e\xfd|1\xef\x10\x92,~\x11>\xa8\xa5\x9c$\x05'
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
-app.secret_key = 'BAD_SECRET_KEY'
+
 
 
 def score_control():
