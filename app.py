@@ -8,15 +8,18 @@ from database.states import states_list
 from database.sports import sports_list
 from database.games import games_list, games_list_description
 from flask_session import Session
+import redis
 
 
 import time
 
 app = Flask(__name__)
-app.config['secret_key'] = b'\x8c\xa1\xb2\xb1\x16\x0c1b\x0e\xfd|1\xef\x10\x92,~\x11>\xa8\xa5\x9c$\x05'
-app.config["SESSION_PERMANENT"] = True
-app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
+app.config['SECRET_KEY'] = b'\x8c\xa1\xb2\xb1\x16\x0c1b\x0e\xfd|1\xef\x10\x92,~\x11>\xa8\xa5\x9c$\x05'
+app.config['SESSION_TYPE'] = 'filesystem'
+app.config['SESSION_COOKIE_NAME'] = "my_session"
+
+# Create and initialize the Flask-Session object AFTER `app` has been configured
+server_session = Session(app)
 
 
 def score_control():
