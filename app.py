@@ -8,6 +8,7 @@ from database.states import states_list
 from database.sports import sports_list
 from database.games import games_list, games_list_description
 
+
 import time
 
 app = Flask(__name__)
