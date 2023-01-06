@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="has-background-info">
+<head>
+    <meta charset="UTF-8">
+    <title>Hangman</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+</head>
+<body>
+    <div class="hangman">
+        <h1 class="hangman-text has-text-danger">Let's play hangman</h1>
+        <br>
+        <p class="has-text-primary has-text-weight-medium">To Play, pick a Category. Some categories come with hints.
+        Guess the word by either typing in letter by letter or the entire word. Get the word in six tries or Hang</p>
+        <br>
+        <p class="has-text-primary has-text-weight-medium">Pick a Category</p>
+        <br>
+
+        <div class="hangman-buttons">
+            <div class="control">
+                <form action="/states">
+                    <button class="button is-primary is-rounded" type="submit">Countries in Africa</button>
+                </form>
+            </div>
+
+            <div class="control">
+                <form action="/shapes">
+                    <button class="button is-primary is-rounded" type="submit">2D and 3D Shapes</button>
+                </form>
+            </div>
+
+            <div class="control">
+                <form action="/sports">
+                    <button class="button is-primary is-rounded" type="submit">Field and Track Sports</button>
+                </form>
+            </div>
+
+            <div class="control">
+                <form action="/games?e=trttrt">
+                    <button class="button is-primary is-rounded" type="submit">Video Games</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="hangman-text-mobile">
+        <h1 class="has-text-primary">This Website does not work on small screens</h1>
+    </div>
+</body>
+</html>

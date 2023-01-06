@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="has-background-info">
+<head>
+    <meta charset="UTF-8">
+    <title>{{category}}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main2.css') }}">
+</head>
+<body>
+    <div class="hangman">
+
+        <div class="section hangman-columns is-small ">
+            {% if tries == 5 %}
+            <img style="height:80%" src="./static/Noose.png" alt="noose">
+            {% elif tries == 4 %}
+            <img style="height:80%" src="./static/Body.png" alt="body">
+            {% elif tries == 3 %}
+            <img style="height:80%" src="./static/RightHand.png" alt="RightHand">
+            {% elif tries == 2 %}
+            <img style="height:80%" src="./static/LeftHand.png" alt="Left Hand">
+            {% elif tries == 1 %}
+            <img style="height:80%" src="./static/LeftLeg.png" alt="Left Leg">
+            {% elif tries == 0 %}
+            <img style="height:80%" src="./static/RightLeg.png" alt="Right Leg">
+            {% endif %}
+        </div>
+
+        <div class="section is-medium hangman-columns-2 mt-6 mb-6 has-text-centered" >
+            <p class="has-text-primary has-text-weight-medium"> The Chosen Category is {{category}} </p>
+
+            <p class="has-text-primary has-text-weight-medium"> Your Current Score is {{score}} </p>
+            <br>
+            <div class="is-justify-content-center">
+                {% for letter in word %}
+                    <span style="border-bottom: 2px solid red; display:inline-block;" class="hangman-guess">
+                        <p class="has-text-danger has-text-weight-medium"> {{letter}} </p>
+                    </span>
+                {% endfor %}
+            </div>
+            <br><br><br>
+            <form action={{form_html}} method = "POST" autocomplete="off">
+                <div class="field hangman-input-div">
+                    <input class="input is-primary has-text-centered hangman-input" style="width: 30%;" type="text"  placeholder="Enter text..." name="game_input">
+                </div>
+
+                {% if canGuess == 0 %}
+                <div class="field hangman-buttons">
+                    <button class="button is-primary is-rounded" type="submit">Guess</button>
+                </div>
+                {% endif %}
+            </form>
+
+            <br>
+            {% if color == 0 %}
+            <p class="has-text-primary has-text-weight-medium"> {{msg}} </p>
+            {% elif color == 1 %}
+            <p class="has-text-danger has-text-weight-medium"> {{msg}} </p>
+            {% endif %}
+
+            <p class="has-text-primary has-text-weight-medium"> {{triesnumber}} </p>
+
+            <p class="has-text-primary has-text-weight-medium"> {{description}} </p>
+
+            <br>
+
+            {%if canContinue == 1%}
+            <form action= {{form_html}} autocomplete="off">
+                <div class="field hangman-buttons">
+                     <button class="button is-primary is-rounded" type="submit">Continue</button>
+                </div>
+            </form>
+            {% endif %}
+
+            <br>
+
+            <form action="/">
+                <div class="field hangman-buttons">
+                    <button class="button is-primary is-rounded" type="submit">Restart</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="hangman-text-mobile">
+        <h1 class="has-text-primary">This Website does not work on small screens</h1>
+    </div>
+</body>
+</html>
