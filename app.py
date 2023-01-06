@@ -342,7 +342,3 @@ def games_post():
     return play_description('game_input', "/games", "Video Games")
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
-
