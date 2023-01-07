@@ -7,8 +7,6 @@ from database.shapes import shapes_list
 from database.states import states_list
 from database.sports import sports_list
 from database.games import games_list, games_list_description
-
-
 import time
 
 app = Flask(__name__)
@@ -343,3 +341,5 @@ def games_post():
     return play_description('game_input', "/games", "Video Games")
 
 
+if __name__ == '__main__':
+    app.run(debug=True)
