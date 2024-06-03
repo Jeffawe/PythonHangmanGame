@@ -1,11 +1,22 @@
 # Python Hangman Game
 
-[![GitHub all releases](https://img.shields.io/github/downloads/jeffawe/Hangman/total)](https://github.com/jeffawe/Hangman/releases)
-[![GitHub language count](https://img.shields.io/github/languages/count/jeffawe/Hangman)](https://github.com/jeffawe/Hangman)
-[![GitHub top language](https://img.shields.io/github/languages/top/jeffawe/Hangman?color=yellow)](https://github.com/jeffawe/Hangman)
-[![Bitbucket open issues](https://img.shields.io/bitbucket/issues/jeffawe/Hangman)](https://bitbucket.org/jeffawe/Hangman/issues)
-[![GitHub forks](https://img.shields.io/github/forks/jeffawe/Hangman?style=social)](https://github.com/jeffawe/Hangman/network/members)
-[![GitHub Repo stars](https://img.shields.io/github/stars/jeffawe/Hangman?style=social)](https://github.com/jeffawe/Hangman/stargazers)
+<div align="center">
+  <a href="https://github.com/jeffawe/SDL_Template">
+    <img src="https://img.shields.io/github/languages/count/jeffawe/PythonHangmanGame" alt="GitHub language count" style="width: 150px; margin: 10px;"/>
+  </a>
+  <a href="https://github.com/jeffawe/SDL_Template">
+    <img src="https://img.shields.io/github/languages/top/jeffawe/PythonHangmanGame?color=yellow" alt="GitHub top language" style="width: 150px; margin: 10px;"/>
+  </a>
+  <a href="https://bitbucket.org/jeffawe/SDL_Template/issues">
+    <img src="https://img.shields.io/bitbucket/issues/jeffawe/PythonHangmanGame" alt="Bitbucket open issues" style="width: 150px; margin: 10px;"/>
+  </a>
+  <a href="https://github.com/jeffawe/SDL_Template/network/members">
+    <img src="https://img.shields.io/github/forks/jeffawe/PythonHangmanGame?style=social" alt="GitHub forks" style="width: 150px; margin: 10px;"/>
+  </a>
+  <a href="https://github.com/jeffawe/SDL_Template/stargazers">
+    <img src="https://img.shields.io/github/stars/jeffawe/PythonHangmanGame?style=social" alt="GitHub Repo stars" style="width: 150px; margin: 10px;"/>
+  </a>
+</div>
 
 This project is a web-based implementation of the classic Hangman game built using Python and Flask. Check out the live demo of the Hangman game [here](https://jeffawe-hangman.vercel.app).
 
