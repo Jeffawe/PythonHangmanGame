@@ -17,7 +17,7 @@
     <img src="https://img.shields.io/github/stars/jeffawe/PythonHangmanGame?style=social" alt="GitHub Repo stars" style="width: 150px; margin: 10px;"/>
   </a>
 </div>
-
+<br>
 This project is a web-based implementation of the classic Hangman game built using Python and Flask. Check out the live demo of the Hangman game [here](https://jeffawe-hangman.vercel.app).
 
 ## Purpose
@@ -40,9 +40,9 @@ To set up the project locally, follow these steps:
 
         python -m venv venv
 
-4.Install the required packages:
-
-        pip install -r requirements.txt
+4. Install the required packages:
+   
+       pip install -r requirements.txt
 
 5. Run the Flask application:
 
@@ -50,7 +50,7 @@ To set up the project locally, follow these steps:
 
 ## Usage
 
-After running the Flask application, you can play the Hangman game by guessing letters. The game will keep track of your guesses and update the display accordingly. Try to guess the hidden word before you run out of attempts!
+After running the Flask application, you can play the Hangman game by guessing letters or the entire word. The game will keep track of your guesses and update the display accordingly. Try to guess the hidden word before you run out of attempts!
 
 ## Contributing
 
