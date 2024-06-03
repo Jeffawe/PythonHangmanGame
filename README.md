@@ -18,7 +18,8 @@
   </a>
 </div>
 <br>
-This project is a web-based implementation of the classic Hangman game built using Python and Flask. Check out the live demo of the Hangman game [here](https://jeffawe-hangman.vercel.app).
+
+This project is a web-based implementation of the classic Hangman game built using Python and Flask. Check out the live demo of the [Hangman game](https://jeffawe-hangman.vercel.app).
 
 ## Purpose
 
